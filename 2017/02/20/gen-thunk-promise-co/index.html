@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ES6,JS,Generator,thunk,promise,co," />
+  <meta name="keywords" content="JS,ES6,Generator,thunk,promise,co," />
 
 
 
@@ -92,7 +92,7 @@
 promise 只是改变了写法
 然后最后用catch 捕获执行中的错误
 
-1234567891011121314var readFile = require(&apos;fs-readFile-promise&apos;)readFile(fileA).then(function(data)&amp;#123;console.log(data.toString())&amp;#125;">
+1234567891011121314var readFile = require(&apos;fs-readFile-promise&apos;)readFile(fileA).then(function(data)&amp;#123;console.log(data.toString())&amp;#125;)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="gen-thunk-promise-co">
 <meta property="og:url" content="https://ic-.gihub.io/2017/02/20/gen-thunk-promise-co/index.html">
@@ -102,8 +102,8 @@ promise 只是改变了写法
 promise 只是改变了写法
 然后最后用catch 捕获执行中的错误
 
-1234567891011121314var readFile = require(&apos;fs-readFile-promise&apos;)readFile(fileA).then(function(data)&amp;#123;console.log(data.toString())&amp;#125;">
-<meta property="og:updated_time" content="2017-02-21T02:28:25.000Z">
+1234567891011121314var readFile = require(&apos;fs-readFile-promise&apos;)readFile(fileA).then(function(data)&amp;#123;console.log(data.toString())&amp;#125;)">
+<meta property="og:updated_time" content="2017-02-21T03:21:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="gen-thunk-promise-co">
 <meta name="twitter:description" content="Generator
@@ -111,7 +111,7 @@ promise 只是改变了写法
 promise 只是改变了写法
 然后最后用catch 捕获执行中的错误
 
-1234567891011121314var readFile = require(&apos;fs-readFile-promise&apos;)readFile(fileA).then(function(data)&amp;#123;console.log(data.toString())&amp;#125;">
+1234567891011121314var readFile = require(&apos;fs-readFile-promise&apos;)readFile(fileA).then(function(data)&amp;#123;console.log(data.toString())&amp;#125;)">
 
 
 
@@ -349,14 +349,14 @@ promise 只是改变了写法
       
 
       
-        <hr>
-<ul>
+        <ul>
 <li>Generator</li>
 <li>传统异步 代码各种嵌套</li>
 <li>promise 只是改变了写法</li>
 <li>然后最后用catch 捕获执行中的错误</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> readFile = <span class="built_in">require</span>(<span class="string">'fs-readFile-promise'</span>)</div><div class="line">readFile(fileA)</div><div class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line"><span class="built_in">console</span>.log(data.toString())</div><div class="line">&#125;)</div><div class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="keyword">return</span> readFile(fileB)</div><div class="line">&#125;)</div><div class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line"><span class="built_in">console</span>.log(data.toString())</div><div class="line">&#125;)</div><div class="line">.catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</div><div class="line"><span class="comment">//</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <ul>
 <li>Generator</li>
 <li>ES6 中协程的体现 函数可以交出执行权（即暂停执行，又可以恢复执行）</li>
@@ -414,9 +414,9 @@ promise 只是改变了写法
       
         <div class="post-tags">
           
-            <a href="/tags/ES6/" rel="tag"># ES6</a>
-          
             <a href="/tags/JS/" rel="tag"># JS</a>
+          
+            <a href="/tags/ES6/" rel="tag"># ES6</a>
           
             <a href="/tags/Generator/" rel="tag"># Generator</a>
           
@@ -446,6 +446,10 @@ promise 只是改变了写法
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/21/css-ellipsis/" rel="prev" title="文本溢出">
+                文本溢出 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -517,7 +521,7 @@ promise 只是改变了写法
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -535,7 +539,7 @@ promise 只是改变了写法
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -1,0 +1,765 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="node,express," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="expressexpress
+中文API
+快速生成应用骨架12npm install express-generator -gexpress myapp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="express">
+<meta property="og:url" content="https://ic-.gihub.io/2017/02/22/express/index.html">
+<meta property="og:site_name" content="ke_xx">
+<meta property="og:description" content="expressexpress
+中文API
+快速生成应用骨架12npm install express-generator -gexpress myapp">
+<meta property="og:updated_time" content="2017-02-22T04:07:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="express">
+<meta name="twitter:description" content="expressexpress
+中文API
+快速生成应用骨架12npm install express-generator -gexpress myapp">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://ic-.gihub.io/2017/02/22/express/"/>
+
+
+
+
+
+  <title> express | ke_xx </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ke_xx</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://ic-.gihub.io/2017/02/22/express/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="ke_xx">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/3960555?v=3&u=a4fcc43ead0c5a2ea840ffd6bae5d4327335aac5&s=400">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="ke_xx">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="ke_xx" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                express
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-22T11:45:30+08:00">
+                2017-02-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="express"><a href="#express" class="headerlink" title="express"></a>express</h3><p><a href="http://www.expressjs.com.cn/" target="_blank" rel="external">express</a></p>
+<p><a href="http://expressjs.jser.us/api.html#express" target="_blank" rel="external">中文API</a></p>
+<h3 id="快速生成应用骨架"><a href="#快速生成应用骨架" class="headerlink" title="快速生成应用骨架"></a>快速生成应用骨架</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install express-generator -g</div><div class="line">express myapp</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="Api"><a href="#Api" class="headerlink" title="Api"></a>Api</h3><h5 id="入口"><a href="#入口" class="headerlink" title="入口"></a>入口</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var express = require(&apos;express&apos;)</div><div class="line">var app = express()</div></pre></td></tr></table></figure>
+<h5 id="express-static"><a href="#express-static" class="headerlink" title="express.static"></a>express.static</h5><ul>
+<li>是 Express 内置的唯一一个中间件,负责托管 Express 应用内的静态资源。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">app.use([&apos;/path&apos;], express.static(&apos;public&apos;, [options]))</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h5><h6 id="处理请求"><a href="#处理请求" class="headerlink" title="处理请求"></a>处理请求</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line">    res.send(<span class="string">'hello world'</span>);</div><div class="line">&#125;);</div><div class="line">app.listen(<span class="number">3000</span>);</div></pre></td></tr></table></figure>
+<h6 id="app-local-variables"><a href="#app-local-variables" class="headerlink" title="app.local.variables"></a>app.local.variables</h6><ul>
+<li>类似全局变量</li>
+<li>app.local.title = ‘my app’</li>
+<li>app.local.strftime = require(“strftime”)<h6 id="app-mountpath"><a href="#app-mountpath" class="headerlink" title="app.mountpath"></a>app.mountpath</h6><h6 id="app-set-name-value"><a href="#app-set-name-value" class="headerlink" title="app.set(name, value)"></a>app.set(name, value)</h6><h6 id="app-get-name"><a href="#app-get-name" class="headerlink" title="app.get(name)"></a>app.get(name)</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">app.set(<span class="string">'title'</span>, <span class="string">'my site'</span>)</div><div class="line">app.get(<span class="string">'title'</span>)</div><div class="line"><span class="comment">//=&gt;my site</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="app-enable-name-set-name-true"><a href="#app-enable-name-set-name-true" class="headerlink" title="app.enable(name) //set name = true"></a>app.enable(name) //set name = true</h6><h6 id="app-disable-name-set-name-false"><a href="#app-disable-name-set-name-false" class="headerlink" title="app.disable(name) //set name = false"></a>app.disable(name) //set name = false</h6><h6 id="app-enabled-name"><a href="#app-enabled-name" class="headerlink" title="app.enabled(name)"></a>app.enabled(name)</h6><ul>
+<li>name 是否启用<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">app.enabled(<span class="string">'trust proxy'</span>)</div><div class="line"><span class="comment">//=&gt; false</span></div><div class="line">app.enable(<span class="string">'trust proxy'</span>)</div><div class="line">app.enabled(<span class="string">'trust proxy'</span>)</div><div class="line"><span class="comment">//=&gt; true</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="app-disbaled-name"><a href="#app-disbaled-name" class="headerlink" title="app.disbaled(name)"></a>app.disbaled(name)</h6><ul>
+<li>name 是否禁用<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">app.disabled(<span class="string">'trust proxy'</span>)</div><div class="line"><span class="comment">//=&gt; true</span></div><div class="line">app.enable(<span class="string">'trust proxy'</span>)</div><div class="line">app.disabled(<span class="string">'trust proxy'</span>)</div><div class="line"><span class="comment">//=&gt; false</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="app-configure-env-callback"><a href="#app-configure-env-callback" class="headerlink" title="app.configure([env], callback)"></a>app.configure([env], callback)</h6><ul>
+<li>当env和 app.get(‘env’) 匹配（即使 process.env.NODE_ENV）执行callback<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//所有环境</span></div><div class="line">app.configure(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    app.set(<span class="string">'title'</span>, <span class="string">'My Application'</span>)</div><div class="line">&#125;)</div><div class="line"><span class="comment">//开发环境</span></div><div class="line">app.configure(<span class="string">'development'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    app.set(<span class="string">'db uri'</span>, <span class="string">'localhost/dev'</span>)</div><div class="line">&#125;)</div><div class="line"><span class="comment">//生产环境</span></div><div class="line">app.configure(<span class="string">'production'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    app.set(<span class="string">'db uri'</span>, <span class="string">'n.n.n.n/prop'</span>)</div><div class="line">&#125;)</div><div class="line"><span class="comment">// 所有环境</span></div><div class="line">app.set(<span class="string">'title'</span>, <span class="string">'My Application'</span>);</div><div class="line"><span class="comment">// 只用于开发环境</span></div><div class="line"><span class="keyword">if</span> (<span class="string">'development'</span> == app.get(<span class="string">'env'</span>)) &#123;</div><div class="line">    app.set(<span class="string">'db uri'</span>, <span class="string">'localhost/dev'</span>);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 只用于生产环境</span></div><div class="line"><span class="keyword">if</span> (<span class="string">'production'</span> == app.get(<span class="string">'env'</span>)) &#123;</div><div class="line">    app.set(<span class="string">'db uri'</span>, <span class="string">'n.n.n.n/prod'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="app-use-path-function"><a href="#app-use-path-function" class="headerlink" title="app.use([path], function)"></a>app.use([path], function)</h6><ul>
+<li>中间键 path默认为 ‘/‘<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</div><div class="line"><span class="keyword">var</span> app = express()</div><div class="line"><span class="comment">//一个简单的logger</span></div><div class="line">app.use(<span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'%s %s'</span>, req.methond, req.url)</div><div class="line">    next()</div><div class="line">&#125;)</div><div class="line"><span class="comment">//响应</span></div><div class="line">app.use(<span class="string">'/static'</span>, express.static(__dirname+<span class="string">'/public'</span>))</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="settings"><a href="#settings" class="headerlink" title="settings"></a>settings</h6><ul>
+<li>改变 express 的行为</li>
+<li>例：app.set(‘trust proxy’, ‘loopback’)</li>
+<li>env</li>
+<li>trust proxy</li>
+<li>….</li>
+</ul>
+<h6 id="app-engine-ext-callback"><a href="#app-engine-ext-callback" class="headerlink" title="app.engine(ext, callback)"></a>app.engine(ext, callback)</h6><ul>
+<li>注册模板引擎 ext(扩展名) callback处理对应的模板</li>
+<li>app.engine(‘jade’, require(‘jade’).__express)</li>
+<li>缓存处理 jade 后缀的 jade 模板到 require 中<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">app.engine(<span class="string">'view engine'</span>, <span class="string">'pug'</span>)</div><div class="line"><span class="comment">//index.pug</span></div><div class="line">html</div><div class="line">    head</div><div class="line">      title = title</div><div class="line">    body</div><div class="line">      h1 = message</div><div class="line"></div><div class="line"><span class="comment">//app</span></div><div class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line">    res.render(<span class="string">'index'</span>, &#123;<span class="attr">title</span>: <span class="string">'Hey'</span>, <span class="attr">message</span>: <span class="string">'Hello, here'</span>&#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="app-params-name-callback"><a href="#app-params-name-callback" class="headerlink" title="app.params([name], callback)"></a>app.params([name], callback)</h6><ul>
+<li><p>路由参数处理逻辑 尝试加载信息id为(name的值) 如果没有传递给next(err)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">app.params(<span class="string">'user'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next, id</span>)</span>&#123;</div><div class="line">   User.find(id, <span class="function"><span class="keyword">function</span>(<span class="params">err, user</span>)</span>&#123;</div><div class="line">      <span class="keyword">if</span>(err)&#123;</div><div class="line">        next(err)</div><div class="line">      &#125;<span class="keyword">else</span> <span class="keyword">if</span>(user)&#123;</div><div class="line">        req.user = user;</div><div class="line">        next()</div><div class="line">      &#125;<span class="keyword">else</span>&#123;</div><div class="line">        next(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'faild to load user'</span>))</div><div class="line">      &#125;</div><div class="line">   &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>如果只传callback 那么就可以改变 app.params() API</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">app.params(<span class="function"><span class="keyword">function</span>(<span class="params">name, fn</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>( fn installof <span class="built_in">RegExp</span>)&#123;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next, val</span>)</span>&#123;</div><div class="line">      <span class="keyword">var</span> captures</div><div class="line">      <span class="keyword">if</span>(capture = fn.exec(<span class="built_in">String</span>(val)))&#123;</div><div class="line">        req.params[name] = captures</div><div class="line">        next()</div><div class="line">      &#125;<span class="keyword">else</span>&#123;</div><div class="line">        next(<span class="string">'route'</span>)</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">app.params(<span class="string">'id'</span>, /\d+$/)</div><div class="line">app.get(<span class="string">'/user/:id'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line">  res.send(<span class="string">'user'</span>+req.params.id))</div><div class="line">&#125;)</div><div class="line"></div><div class="line">app.params(<span class="string">'range'</span>, /^(\w+)\.\.(\w+)?$/)</div><div class="line">app.get(<span class="string">'/range/:range'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> range = req.params.range;</div><div class="line">  res.send(<span class="string">'from'</span>+range[<span class="number">1</span>]+<span class="string">'to'</span>+range[<span class="number">2</span>])</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/node/" rel="tag"># node</a>
+          
+            <a href="/tags/express/" rel="tag"># express</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/22/wx/" rel="next" title="wx小程序">
+                <i class="fa fa-chevron-left"></i> wx小程序
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars3.githubusercontent.com/u/3960555?v=3&u=a4fcc43ead0c5a2ea840ffd6bae5d4327335aac5&s=400"
+               alt="ke_xx" />
+          <p class="site-author-name" itemprop="name">ke_xx</p>
+           
+              <p class="site-description motion-element" itemprop="description">Blog Record Other</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#express"><span class="nav-number">1.</span> <span class="nav-text">express</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快速生成应用骨架"><span class="nav-number">2.</span> <span class="nav-text">快速生成应用骨架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Api"><span class="nav-number">3.</span> <span class="nav-text">Api</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#入口"><span class="nav-number">3.0.1.</span> <span class="nav-text">入口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#express-static"><span class="nav-number">3.0.2.</span> <span class="nav-text">express.static</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Application"><span class="nav-number">3.0.3.</span> <span class="nav-text">Application</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#处理请求"><span class="nav-number">3.0.3.1.</span> <span class="nav-text">处理请求</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#app-local-variables"><span class="nav-number">3.0.3.2.</span> <span class="nav-text">app.local.variables</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#app-mountpath"><span class="nav-number">3.0.3.3.</span> <span class="nav-text">app.mountpath</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#app-set-name-value"><span class="nav-number">3.0.3.4.</span> <span class="nav-text">app.set(name, value)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#app-get-name"><span class="nav-number">3.0.3.5.</span> <span class="nav-text">app.get(name)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#app-enable-name-set-name-true"><span class="nav-number">3.0.3.6.</span> <span class="nav-text">app.enable(name) //set name = true</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#app-disable-name-set-name-false"><span class="nav-number">3.0.3.7.</span> <span class="nav-text">app.disable(name) //set name = false</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#app-enabled-name"><span class="nav-number">3.0.3.8.</span> <span class="nav-text">app.enabled(name)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#app-disbaled-name"><span class="nav-number">3.0.3.9.</span> <span class="nav-text">app.disbaled(name)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#app-configure-env-callback"><span class="nav-number">3.0.3.10.</span> <span class="nav-text">app.configure([env], callback)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#app-use-path-function"><span class="nav-number">3.0.3.11.</span> <span class="nav-text">app.use([path], function)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#settings"><span class="nav-number">3.0.3.12.</span> <span class="nav-text">settings</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#app-engine-ext-callback"><span class="nav-number">3.0.3.13.</span> <span class="nav-text">app.engine(ext, callback)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#app-params-name-callback"><span class="nav-number">3.0.3.14.</span> <span class="nav-text">app.params([name], callback)</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ke_xx</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

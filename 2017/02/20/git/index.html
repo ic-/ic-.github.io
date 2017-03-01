@@ -117,7 +117,7 @@ git checkout dev
 git checkout master
 git merge dev
 git merge –no-ff -m “merge name-1 to">
-<meta property="og:updated_time" content="2017-02-21T08:52:57.000Z">
+<meta property="og:updated_time" content="2017-03-01T08:19:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git">
 <meta name="twitter:description" content="Git
@@ -386,6 +386,9 @@ git merge –no-ff -m “merge name-1 to">
 <li>git branch -d dev<a id="more"></a>
 </li>
 </ul>
+<h3 id="clone"><a href="#clone" class="headerlink" title="clone"></a>clone</h3><ul>
+<li>git clone xxxx.git newfilename</li>
+</ul>
 <h3 id="log"><a href="#log" class="headerlink" title="log"></a>log</h3><ul>
 <li>git log</li>
 <li>git log -1</li>
@@ -397,14 +400,27 @@ git merge –no-ff -m “merge name-1 to">
 <li>git remote add origin git@github.com:ic-/code</li>
 <li>报错的话 ： git remote rm origin</li>
 <li>git push -u origin master //首次</li>
-</ul>
-<h3 id="push-pull"><a href="#push-pull" class="headerlink" title="push pull"></a>push pull</h3><ul>
+<li>git remote -v 远端仓库实际链接</li>
+<li>git remote rm 别名[alias]</li>
+<li>git remote add [alias] git@gitxxx.git<h3 id="fetch"><a href="#fetch" class="headerlink" title="fetch"></a>fetch</h3></li>
+<li>从远端仓库下载新分支与数据<h3 id="push-pull"><a href="#push-pull" class="headerlink" title="push pull"></a>push pull</h3></li>
+<li>从远端仓库提取数据并尝试合并到当前分支</li>
 <li>本地和远程有冲突的话：</li>
 <li>git pull origin master</li>
 <li>git push origin master</li>
 <li>git psuh origin master //默认</li>
 <li>git push origin dev //推送某个分支</li>
 <li>git push origin :dev //删除远程分支</li>
+<li>git push origin -f 强制覆盖</li>
+</ul>
+<h3 id="Reset-checkout-revert"><a href="#Reset-checkout-revert" class="headerlink" title="Reset checkout revert"></a>Reset checkout revert</h3><ul>
+<li>reset checkout (指定文件或所有文件) revert 不能指定文件</li>
+<li>git reset HEAD@{2}/git checkout hotfixbranch <ul>
+<li>–soft 缓存区和工作目录都不会被改变</li>
+<li>–mixed 默认选项。缓存区和你指定的提交同步，但工作目录不受影响</li>
+<li>–hard 缓存区和工作目录都同步到你指定的提交 </li>
+</ul>
+</li>
 </ul>
 <h3 id="alias"><a href="#alias" class="headerlink" title="alias"></a>alias</h3><ul>
 <li>配置别名</li>
@@ -421,7 +437,19 @@ git merge –no-ff -m “merge name-1 to">
 <li>vim .git/config //[alias] 修改</li>
 </ul>
 <h3 id="文件忘记忽略上传远程服务器问题"><a href="#文件忘记忽略上传远程服务器问题" class="headerlink" title="文件忘记忽略上传远程服务器问题"></a>文件忘记忽略上传远程服务器问题</h3><p>解决：编辑 .gitignore 文件添加忽略<br>git rm -r –cached .<br>git add .<br>git commit -m ‘repush’<br>git push</p>
-
+<h3 id="gitlab-master-代码分支有问题"><a href="#gitlab-master-代码分支有问题" class="headerlink" title="gitlab master 代码分支有问题"></a>gitlab master 代码分支有问题</h3><p>问题：基础框架最新版本有问题，不知道的情况下提交了gitlab<br>解决：</p>
+<pre><code>- 方法1：
+    - 获取gitlab owner权限
+    - 本地master分支代码reset到正确节点
+    - git push -f 强制覆盖
+- 方法2：
+    - 本地拉个dev分支 分支代码reset到正确节点 备用
+    - git 删除master 代码 提交远程
+    - git merge dev  
+        - merge 代码没过来。。
+        - 用了拷贝
+    - git push 到远程
+</code></pre>
       
     </div>
 
@@ -541,7 +569,7 @@ git merge –no-ff -m “merge name-1 to">
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -550,7 +578,7 @@ git merge –no-ff -m “merge name-1 to">
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -559,7 +587,7 @@ git merge –no-ff -m “merge name-1 to">
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -594,7 +622,7 @@ git merge –no-ff -m “merge name-1 to">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git"><span class="nav-number">1.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#log"><span class="nav-number">2.</span> <span class="nav-text">log</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#remote"><span class="nav-number">3.</span> <span class="nav-text">remote</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#push-pull"><span class="nav-number">4.</span> <span class="nav-text">push pull</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#alias"><span class="nav-number">5.</span> <span class="nav-text">alias</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件忘记忽略上传远程服务器问题"><span class="nav-number">6.</span> <span class="nav-text">文件忘记忽略上传远程服务器问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git"><span class="nav-number">1.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#clone"><span class="nav-number">2.</span> <span class="nav-text">clone</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#log"><span class="nav-number">3.</span> <span class="nav-text">log</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#remote"><span class="nav-number">4.</span> <span class="nav-text">remote</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fetch"><span class="nav-number">5.</span> <span class="nav-text">fetch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#push-pull"><span class="nav-number">6.</span> <span class="nav-text">push pull</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reset-checkout-revert"><span class="nav-number">7.</span> <span class="nav-text">Reset checkout revert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#alias"><span class="nav-number">8.</span> <span class="nav-text">alias</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件忘记忽略上传远程服务器问题"><span class="nav-number">9.</span> <span class="nav-text">文件忘记忽略上传远程服务器问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gitlab-master-代码分支有问题"><span class="nav-number">10.</span> <span class="nav-text">gitlab master 代码分支有问题</span></a></li></ol></div>
             
 
           </div>

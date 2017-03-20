@@ -88,27 +88,18 @@
 
 
 <meta name="description" content="Array创建数组的方法123var arr = new Array(3)  //[undefined * 3]var arr = new Array(1,2,3) //[1,2,3]var arr = [1,2,3]
-属性- arr.constructor  //Array
-- arr.length    //num
-- propertyIsEnumerable 
-- __proto__">
+属性123arr.constructor  //Arrayarr.length    //numarr.__proto__">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Array">
 <meta property="og:url" content="https://ic-.gihub.io/2017/03/20/Array/index.html">
 <meta property="og:site_name" content="ke_xx">
 <meta property="og:description" content="Array创建数组的方法123var arr = new Array(3)  //[undefined * 3]var arr = new Array(1,2,3) //[1,2,3]var arr = [1,2,3]
-属性- arr.constructor  //Array
-- arr.length    //num
-- propertyIsEnumerable 
-- __proto__">
-<meta property="og:updated_time" content="2017-03-20T12:08:46.000Z">
+属性123arr.constructor  //Arrayarr.length    //numarr.__proto__">
+<meta property="og:updated_time" content="2017-03-20T12:10:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Array">
 <meta name="twitter:description" content="Array创建数组的方法123var arr = new Array(3)  //[undefined * 3]var arr = new Array(1,2,3) //[1,2,3]var arr = [1,2,3]
-属性- arr.constructor  //Array
-- arr.length    //num
-- propertyIsEnumerable 
-- __proto__">
+属性123arr.constructor  //Arrayarr.length    //numarr.__proto__">
 
 
 
@@ -347,11 +338,8 @@
 
       
         <h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><h4 id="创建数组的方法"><a href="#创建数组的方法" class="headerlink" title="创建数组的方法"></a>创建数组的方法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>)  <span class="comment">//[undefined * 3]</span></div><div class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>) <span class="comment">//[1,2,3]</span></div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</div></pre></td></tr></table></figure>
-<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><pre><code>- arr.constructor  //Array
-- arr.length    //num
-- propertyIsEnumerable 
-- __proto__
-</code></pre><a id="more"></a>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">arr.constructor  <span class="comment">//Array</span></div><div class="line">arr.length    <span class="comment">//num</span></div><div class="line">arr.__proto__</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">arr[n] = <span class="string">'new ele'</span></div><div class="line"><span class="keyword">delete</span> arr[<span class="number">0</span>]   <span class="comment">//[undefied, 2,3]</span></div><div class="line">arr.push(add_end)   <span class="comment">//arr.length    arr has change 尾部插入</span></div><div class="line">arr.unshift()   <span class="comment">//arr.length    arr has change 头部插入</span></div><div class="line">arr.pop()       <span class="comment">//arr.length    arr has change 尾部删除</span></div><div class="line">arr.shift()     <span class="comment">//arr.length    arr has change 头部删除</span></div><div class="line"></div><div class="line">arr.slice(start, end)   <span class="comment">//new arr arr no change </span></div><div class="line">arr.slice(start)        </div><div class="line">arr.slice(start, -end)</div><div class="line"><span class="comment">// return delete ele_arr  arr has change</span></div><div class="line">arr.splice(start, delete_length, add_element) </div><div class="line"></div><div class="line">arr.sort(<span class="function">(<span class="params">x, y</span>)=&gt;</span>&#123;</div><div class="line">    <span class="keyword">return</span> x - y &gt; <span class="number">0</span></div><div class="line">    <span class="keyword">return</span> x - y &lt; <span class="number">0</span></div><div class="line">    <span class="keyword">return</span> x - y = <span class="number">0</span></div><div class="line">&#125;)</div><div class="line">arr.reverse() </div><div class="line">arr.concat([])</div><div class="line">arr.join(<span class="string">','</span>)</div><div class="line"></div><div class="line">arr.indexOf(ele, start)</div><div class="line">arr.lastIndexOf(ele)</div><div class="line"></div><div class="line"><span class="comment">//迭代方法</span></div><div class="line">arr.every(<span class="function">(<span class="params">item, index, arr</span>) =&gt;</span>&#123;  <span class="comment">//所以为true 就为true</span></div><div class="line">    <span class="keyword">return</span> <span class="literal">true</span>/<span class="literal">false</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line">arr.some(<span class="function">(<span class="params">v, k, arr</span>)=&gt;</span>&#123;&#125;)  <span class="comment">//任意一项返回 true 为true</span></div><div class="line"></div><div class="line">arr.filter(<span class="function">(<span class="params">item, index, arr</span>)=&gt;</span>&#123;  <span class="comment">//返回值为true的新数组</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line">arr.forEach(<span class="function">(<span class="params">v, k, arr</span>) =&gt;</span> &#123; <span class="comment">//没有返回值</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line">arr.map(<span class="function">(<span class="params">v, k, arr</span>) =&gt;</span>&#123;&#125;&#125;) <span class="comment">//new arr</span></div></pre></td></tr></table></figure>
 
       

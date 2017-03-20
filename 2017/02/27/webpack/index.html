@@ -88,18 +88,27 @@
 
 
 <meta name="description" content="entry1234entry:&amp;#123;    &quot;index&quot;: [&apos;../xxx/index.js&apos;, hotMiddlewareScript],    &quot;page1&quot;: [&apos;../xxx/page1/index.js&apos;, hotMiddlewareScript]&amp;#125;
-output12345678910111213// 1.path: 文件打包存放路径// 2.publicPath:">
+output
+path: 文件打包存放路径
+publicPath: 引用的文件路径
+publicPath配合node服">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webpack">
 <meta property="og:url" content="https://ic-.gihub.io/2017/02/27/webpack/index.html">
 <meta property="og:site_name" content="ke_xx">
 <meta property="og:description" content="entry1234entry:&amp;#123;    &quot;index&quot;: [&apos;../xxx/index.js&apos;, hotMiddlewareScript],    &quot;page1&quot;: [&apos;../xxx/page1/index.js&apos;, hotMiddlewareScript]&amp;#125;
-output12345678910111213// 1.path: 文件打包存放路径// 2.publicPath:">
-<meta property="og:updated_time" content="2017-02-28T02:12:37.000Z">
+output
+path: 文件打包存放路径
+publicPath: 引用的文件路径
+publicPath配合node服">
+<meta property="og:updated_time" content="2017-03-01T09:04:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack">
 <meta name="twitter:description" content="entry1234entry:&amp;#123;    &quot;index&quot;: [&apos;../xxx/index.js&apos;, hotMiddlewareScript],    &quot;page1&quot;: [&apos;../xxx/page1/index.js&apos;, hotMiddlewareScript]&amp;#125;
-output12345678910111213// 1.path: 文件打包存放路径// 2.publicPath:">
+output
+path: 文件打包存放路径
+publicPath: 引用的文件路径
+publicPath配合node服">
 
 
 
@@ -360,7 +369,12 @@ output12345678910111213// 1.path: 文件打包存放路径// 2.publicPath:">
 
       
         <h3 id="entry"><a href="#entry" class="headerlink" title="entry"></a>entry</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">entry:&#123;</div><div class="line">    <span class="string">"index"</span>: [<span class="string">'../xxx/index.js'</span>, hotMiddlewareScript],</div><div class="line">    <span class="string">"page1"</span>: [<span class="string">'../xxx/page1/index.js'</span>, hotMiddlewareScript]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="output"><a href="#output" class="headerlink" title="output"></a>output</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 1.path: 文件打包存放路径</span></div><div class="line"><span class="comment">// 2.publicPath: 引用的文件路径，</span></div><div class="line">entry: &#123;</div><div class="line">    <span class="attr">indexA</span>: [<span class="string">'./assets/javascripts/index.js'</span>]</div><div class="line">&#125;</div><div class="line">output: &#123;</div><div class="line">    <span class="attr">path</span>: <span class="string">'./public/dist'</span>,</div><div class="line">    <span class="attr">publicPath</span>: <span class="string">'/assets/'</span>,</div><div class="line">    <span class="attr">filename</span>: <span class="string">'/javascript/[name].js'</span>,</div><div class="line">    libary</div><div class="line">&#125;</div><div class="line"><span class="comment">// filename: /public/dist/javascript/indexA.js</span></div><div class="line"><span class="comment">// publicPath: &lt;img src="/assets/logo.png" /&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="output"><a href="#output" class="headerlink" title="output"></a>output</h3><ul>
+<li>path: 文件打包存放路径</li>
+<li>publicPath: 引用的文件路径</li>
+<li>publicPath配合node服务端<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">webpack.js</div><div class="line">entry: &#123;</div><div class="line">    <span class="attr">indexA</span>: [<span class="string">'./assets/javascripts/index.js'</span>]</div><div class="line">&#125;</div><div class="line">output: &#123;</div><div class="line">    <span class="attr">path</span>: <span class="string">'./public/dist'</span>,</div><div class="line">    <span class="attr">publicPath</span>: <span class="string">'/assets/'</span>,</div><div class="line">    <span class="attr">filename</span>: <span class="string">'/javascript/[name].js'</span>,</div><div class="line">    libary</div><div class="line">&#125;</div><div class="line"><span class="comment">// server/index.js</span></div><div class="line"><span class="keyword">var</span> app = express()</div><div class="line">app.use(<span class="string">'/assets'</span>, express.static(path.join(__dirname, <span class="string">'../public/dist'</span>)));</div><div class="line"></div><div class="line"><span class="comment">// filename: /public/dist/javascript/indexA.js</span></div><div class="line"><span class="comment">// publicPath: &lt;img src="/assets/logo.png" /&gt;</span></div></pre></td></tr></table></figure></li>
+</ul>
+
       
     </div>
 
@@ -405,6 +419,10 @@ output12345678910111213// 1.path: 文件打包存放路径// 2.publicPath:">
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/03/laoshi/" rel="prev" title="laoshi">
+                laoshi <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -476,7 +494,7 @@ output12345678910111213// 1.path: 文件打包存放路径// 2.publicPath:">
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -494,7 +512,7 @@ output12345678910111213// 1.path: 文件打包存放路径// 2.publicPath:">
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -92,10 +92,7 @@
 &amp;lt;!Doctype&amp;gt; 位于html文档的第一行 告诉浏览器以什么标准解析html文档
 Doctype不存在或者格式不正确会导致文档以兼容模式呈现
 标准模式：排版和js都以浏览器支持的最高标准运行 
-兼容模式：页面以宽松的向后兼容的方式显示， 模拟老浏览器的行为 防止页面无法访问。
-
-
-HTML 为什么只要要写 &amp;lt;!DO">
+兼容模式：页面以宽松的向后兼容的方式显示， 模拟老浏览器的行为 防止页面无法访问。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="interview">
 <meta property="og:url" content="https://ic-.gihub.io/2017/03/08/interview/index.html">
@@ -105,11 +102,8 @@ HTML 为什么只要要写 &amp;lt;!DO">
 &amp;lt;!Doctype&amp;gt; 位于html文档的第一行 告诉浏览器以什么标准解析html文档
 Doctype不存在或者格式不正确会导致文档以兼容模式呈现
 标准模式：排版和js都以浏览器支持的最高标准运行 
-兼容模式：页面以宽松的向后兼容的方式显示， 模拟老浏览器的行为 防止页面无法访问。
-
-
-HTML 为什么只要要写 &amp;lt;!DO">
-<meta property="og:updated_time" content="2017-03-11T00:28:58.000Z">
+兼容模式：页面以宽松的向后兼容的方式显示， 模拟老浏览器的行为 防止页面无法访问。">
+<meta property="og:updated_time" content="2017-03-20T12:43:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="interview">
 <meta name="twitter:description" content="1.Doctype的作用？标准模式和兼容模式各有什么区别？
@@ -117,10 +111,7 @@ HTML 为什么只要要写 &amp;lt;!DO">
 &amp;lt;!Doctype&amp;gt; 位于html文档的第一行 告诉浏览器以什么标准解析html文档
 Doctype不存在或者格式不正确会导致文档以兼容模式呈现
 标准模式：排版和js都以浏览器支持的最高标准运行 
-兼容模式：页面以宽松的向后兼容的方式显示， 模拟老浏览器的行为 防止页面无法访问。
-
-
-HTML 为什么只要要写 &amp;lt;!DO">
+兼容模式：页面以宽松的向后兼容的方式显示， 模拟老浏览器的行为 防止页面无法访问。">
 
 
 
@@ -363,7 +354,7 @@ HTML 为什么只要要写 &amp;lt;!DO">
 <li>&lt;!Doctype&gt; 位于html文档的第一行 告诉浏览器以什么标准解析html文档</li>
 <li>Doctype不存在或者格式不正确会导致文档以兼容模式呈现</li>
 <li>标准模式：排版和js都以浏览器支持的最高标准运行 </li>
-<li>兼容模式：页面以宽松的向后兼容的方式显示， 模拟老浏览器的行为 防止页面无法访问。</li>
+<li>兼容模式：页面以宽松的向后兼容的方式显示， 模拟老浏览器的行为 防止页面无法访问。<a id="more"></a></li>
 </ul>
 <ol>
 <li>HTML 为什么只要要写 &lt;!DOCTYPE html&gt;？</li>
@@ -647,6 +638,48 @@ HTML 为什么只要要写 &amp;lt;!DO">
 <p>43.元素竖向的百分比设定是相对于容器的高度吗?</p>
 <ul>
 <li>不是 是宽度</li>
+</ul>
+<p>44.伪类和伪元素</p>
+<ul>
+<li>:before css3伪类</li>
+<li>::before css3伪元素</li>
+</ul>
+<p>45.chrome记住密码后自动填充表单黄色背景<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-webkit-autofill</span>, </div><div class="line"><span class="selector-tag">textarea</span><span class="selector-pseudo">:-webkit-autofill</span>, </div><div class="line"><span class="selector-tag">select</span><span class="selector-pseudo">:-webkit-autofill</span>&#123;</div><div class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgb</span>(250, 255, 189); <span class="comment">/* #FAFFBD; */</span></div><div class="line">    <span class="attribute">background-image</span>: none;</div><div class="line">    <span class="attribute">color</span>: <span class="built_in">rgb</span>(0, 0, 0)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>46.line-height如何理解？</p>
+<ul>
+<li>撑开高度 单行可做居中</li>
+</ul>
+<p>47.设置元素浮动后display的值？</p>
+<ul>
+<li>display: blcok</li>
+</ul>
+<p>48.chrome支持12px的字体？</p>
+<ul>
+<li>图片</li>
+<li>最小使用12px的字体</li>
+<li>设置-webkit-text-adjust: none<ul>
+<li>chrome低版本 27以下有效</li>
+<li>对中文无效</li>
+</ul>
+</li>
+<li>用transform</li>
+</ul>
+<p>49.字体清晰变细？</p>
+<ul>
+<li>-webkit-font-smoothing: antialiased;</li>
+</ul>
+<p>50.手写动画执行时间？</p>
+<ul>
+<li>requestAnimationFrame</li>
+<li>60Hz  1000s/60 = 16.7ms</li>
+</ul>
+<p>51.display:inline-block 会显示间隔？</p>
+<ul>
+<li>删除空格 font-size: 0</li>
+</ul>
+<p>52.overflow: scroll时不能平滑滚动的问题怎么处理？</p>
+<ul>
+<li>-webkit-overflow-scrolling: touch;</li>
 </ul>
 
       

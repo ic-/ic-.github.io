@@ -1,0 +1,757 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="js,设计模式," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="设计模式
+让系统代码可重用 可扩展 可解耦 更容易 被理解 且保证代码的可靠性
+原则
+开闭原则：对扩展开发 对修改关闭
+里氏转换原则：子类继承父类，单独调用完全可以运行
+依赖倒转原则：引用一个对象 如果这个对象有底层类型，直接引用底层
+结构隔离原则：每一个接口应该是一中角色
+
+
+单例模式
+一个类只有一个实例
+有就返回 没有就初始化
+单例作为命名空间的提供者">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js设计模式">
+<meta property="og:url" content="https://ic-.gihub.io/2017/03/29/design/index.html">
+<meta property="og:site_name" content="ke_xx">
+<meta property="og:description" content="设计模式
+让系统代码可重用 可扩展 可解耦 更容易 被理解 且保证代码的可靠性
+原则
+开闭原则：对扩展开发 对修改关闭
+里氏转换原则：子类继承父类，单独调用完全可以运行
+依赖倒转原则：引用一个对象 如果这个对象有底层类型，直接引用底层
+结构隔离原则：每一个接口应该是一中角色
+
+
+单例模式
+一个类只有一个实例
+有就返回 没有就初始化
+单例作为命名空间的提供者">
+<meta property="og:updated_time" content="2017-03-29T12:25:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js设计模式">
+<meta name="twitter:description" content="设计模式
+让系统代码可重用 可扩展 可解耦 更容易 被理解 且保证代码的可靠性
+原则
+开闭原则：对扩展开发 对修改关闭
+里氏转换原则：子类继承父类，单独调用完全可以运行
+依赖倒转原则：引用一个对象 如果这个对象有底层类型，直接引用底层
+结构隔离原则：每一个接口应该是一中角色
+
+
+单例模式
+一个类只有一个实例
+有就返回 没有就初始化
+单例作为命名空间的提供者">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://ic-.gihub.io/2017/03/29/design/"/>
+
+
+
+
+
+  <title> js设计模式 | ke_xx </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ke_xx</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://ic-.gihub.io/2017/03/29/design/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="ke_xx">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="https://avatars3.githubusercontent.com/u/3960555?v=3&u=a4fcc43ead0c5a2ea840ffd6bae5d4327335aac5&s=400">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="ke_xx">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="ke_xx" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                js设计模式
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-29T11:18:44+08:00">
+                2017-03-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h3><blockquote>
+<p>让系统代码可重用 可扩展 可解耦 更容易 被理解 且保证代码的可靠性</p>
+<h4 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h4><ul>
+<li>开闭原则：对扩展开发 对修改关闭</li>
+<li>里氏转换原则：子类继承父类，单独调用完全可以运行</li>
+<li>依赖倒转原则：引用一个对象 如果这个对象有底层类型，直接引用底层</li>
+<li>结构隔离原则：每一个接口应该是一中角色</li>
+</ul>
+</blockquote>
+<h4 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h4><ul>
+<li>一个类只有一个实例</li>
+<li>有就返回 没有就初始化</li>
+<li>单例作为命名空间的提供者<a id="more"></a>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> single = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">var</span> unique;</div><div class="line">      <span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params"></span>)</span>&#123;</div><div class="line">          <span class="comment">//单例代码</span></div><div class="line">          <span class="comment">//私有方法 变量</span></div><div class="line">          <span class="keyword">var</span> privateVariable = <span class="string">'something private'</span>;</div><div class="line">          <span class="keyword">return</span> &#123;</div><div class="line">              <span class="attr">publicMethod</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">                  <span class="built_in">console</span>.log(<span class="string">'hello world'</span>)</div><div class="line">              &#125;,</div><div class="line">              <span class="attr">publicVariable</span>: <span class="string">'test'</span></div><div class="line">          &#125;</div><div class="line">      &#125;;</div><div class="line">      </div><div class="line">      <span class="keyword">return</span> &#123;</div><div class="line">          <span class="attr">getUnique</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">if</span>(!unique)&#123;</div><div class="line">                unique = init()</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span> unique</div><div class="line">          &#125;</div><div class="line">      &#125;</div><div class="line">  &#125;)();</div></pre></td></tr></table></figure>
+<h4 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h4><ul>
+<li>不同参数生成不同子类</li>
+<li>switch type</li>
+<li>配置文件</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Car = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> Car = <span class="function"><span class="keyword">function</span>(<span class="params">model, year, miles</span>)</span>&#123;</div><div class="line">        <span class="keyword">this</span>.model = model;</div><div class="line">        <span class="keyword">this</span>.year = year;</div><div class="line">        <span class="keyword">this</span>.miles = miles;</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">model, year, miles</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Car(model, year, miles)</div><div class="line">    &#125;</div><div class="line">&#125;)();</div><div class="line"><span class="keyword">var</span> pageDmo = &#123;&#125;;</div><div class="line">pageDmo.Text = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="string">'this is text type'</span></div><div class="line">&#125;;</div><div class="line">pageDmo.Link = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="string">'this is link type'</span></div><div class="line">&#125;;</div><div class="line">pageDmo.Image = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="string">'this is image type'</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line">pageDmo.factory = <span class="function"><span class="keyword">function</span>(<span class="params">type</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> pageDmo[type]</div><div class="line">&#125;;</div><div class="line"><span class="keyword">var</span> o = pageDmo.factory(<span class="string">'Link'</span>); <span class="comment">//'this is link type'</span></div></pre></td></tr></table></figure>
+<h4 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h4><ul>
+<li>委托 代理 中间件 proxy</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Girl = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name </div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> Boy = <span class="function"><span class="keyword">function</span>(<span class="params">girl</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.girl = girl </div><div class="line">    <span class="keyword">this</span>.sendGift = <span class="function"><span class="keyword">function</span>(<span class="params">gift</span>) </span>&#123;</div><div class="line">        alert(<span class="string">'hi'</span>+<span class="keyword">this</span>.girl+<span class="string">', boy send you '</span>+ gift);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> <span class="built_in">Proxy</span> = <span class="function"><span class="keyword">function</span>(<span class="params">girl</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.girl = girl;</div><div class="line">    <span class="keyword">this</span>.sendGift = <span class="function"><span class="keyword">function</span>(<span class="params">gift</span>) </span>&#123;</div><div class="line">        (<span class="keyword">new</span> Boy(girl).sendGift(gift))</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> proxy = <span class="keyword">new</span> <span class="built_in">Proxy</span>(girl(<span class="string">'name'</span>));</div><div class="line">proxy.sendGift(<span class="string">'6666礼物'</span>)</div></pre></td></tr></table></figure>
+<h4 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h4><ul>
+<li>订阅发布模式 publish/subscribe</li>
+<li>一对多的关系</li>
+<li>观察者订阅xx消息类型接受发布数据</li>
+<li>发布消息xx类型和数据 执行观察者订阅</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 订阅者数组arr[]</span></div><div class="line"><span class="comment">// sub订阅的时候 arr.push(&#123;token, func&#125;)</span></div><div class="line"><span class="comment">//发布的时候循环数组执行 订阅者的回调函数</span></div><div class="line"><span class="comment">//取消订阅通过token</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> subpub = &#123;&#125;;</div><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">q</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> topics= &#123;&#125;; <span class="comment">//消息类型对象 下面存放对着订阅者数据</span></div><div class="line">    <span class="comment">// &#123;</span></div><div class="line">    <span class="comment">//    type: [</span></div><div class="line">    <span class="comment">//      &#123;token: 0, func: callback&#125;</span></div><div class="line">    <span class="comment">//    ]</span></div><div class="line">    <span class="comment">// &#125;</span></div><div class="line">    <span class="keyword">var</span> subUid = <span class="number">-1</span>;</div><div class="line">    <span class="comment">//发布方法</span></div><div class="line">    q.pub = <span class="function"><span class="keyword">function</span>(<span class="params">topic, args</span>) </span>&#123;  <span class="comment">//发布消息类型和数据</span></div><div class="line">      <span class="keyword">if</span>(!topics[topic])&#123;  <span class="comment">//如果没有这个订阅这个消息的return</span></div><div class="line">          <span class="keyword">return</span> <span class="literal">false</span></div><div class="line">      &#125;</div><div class="line">      setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> subs = topics[topic],</div><div class="line">            len = subs ? subs.length : <span class="number">0</span>;   <span class="comment">//有几个订阅者</span></div><div class="line">            <span class="keyword">while</span>(len--)&#123;</div><div class="line">                subs[len].func(topic, args)  <span class="comment">//执行订阅者的方法(消息类型，数据)</span></div><div class="line">            &#125;</div><div class="line">      &#125;, <span class="number">0</span>)</div><div class="line">      <span class="keyword">return</span> <span class="literal">true</span>;  <span class="comment">//发布成功</span></div><div class="line">    &#125;;</div><div class="line">    q.sub = <span class="function"><span class="keyword">function</span>(<span class="params">topic, callback</span>) </span>&#123; <span class="comment">//订阅消息 消息处理函数</span></div><div class="line">      <span class="keyword">if</span>(!topics[topic])&#123;  <span class="comment">//如果没有这个消息</span></div><div class="line">          topics[topic]= []  <span class="comment">//新建立一个</span></div><div class="line">      &#125;</div><div class="line">      </div><div class="line">      <span class="keyword">var</span> token = (++subUid).toString();</div><div class="line">      </div><div class="line">      topics[topic].push(&#123;  <span class="comment">//topic消息类型下 有多个订阅者  订阅者的token不同 且唯一</span></div><div class="line">          token: token,</div><div class="line">          <span class="attr">func</span>: callback</div><div class="line">      &#125;)</div><div class="line">      <span class="keyword">return</span> token; <span class="comment">//返回id  取消订阅用</span></div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    q.unsub = <span class="function"><span class="keyword">function</span>(<span class="params">token</span>) </span>&#123;  <span class="comment">//退订 遍历所有的订阅者 找到对应token删除</span></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> m <span class="keyword">in</span> topics)&#123;</div><div class="line">            <span class="keyword">if</span>(topics[m])&#123;  <span class="comment">//如果有订阅者</span></div><div class="line">                <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, j = topics[m].length; i &lt; j; i++)&#123;</div><div class="line">                    <span class="keyword">if</span>(topics[m][i].token == token)&#123;</div><div class="line">                        topics[m].splice(i, <span class="number">1</span>);  <span class="comment">//找到删除</span></div><div class="line">                        <span class="keyword">return</span>;  <span class="comment">//退出</span></div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)(subpub)</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/27/test/" rel="next" title="js 单元测试">
+                <i class="fa fa-chevron-left"></i> js 单元测试
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/29/arrSort/" rel="prev" title="排序去重">
+                排序去重 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="https://avatars3.githubusercontent.com/u/3960555?v=3&u=a4fcc43ead0c5a2ea840ffd6bae5d4327335aac5&s=400"
+               alt="ke_xx" />
+          <p class="site-author-name" itemprop="name">ke_xx</p>
+           
+              <p class="site-description motion-element" itemprop="description">Blog Record Other</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#设计模式"><span class="nav-number">1.</span> <span class="nav-text">设计模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原则"><span class="nav-number">1.1.</span> <span class="nav-text">原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单例模式"><span class="nav-number">1.2.</span> <span class="nav-text">单例模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#工厂模式"><span class="nav-number">1.3.</span> <span class="nav-text">工厂模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代理模式"><span class="nav-number">1.4.</span> <span class="nav-text">代理模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#观察者模式"><span class="nav-number">1.5.</span> <span class="nav-text">观察者模式</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ke_xx</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

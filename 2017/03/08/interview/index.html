@@ -103,7 +103,7 @@ Doctype不存在或者格式不正确会导致文档以兼容模式呈现
 Doctype不存在或者格式不正确会导致文档以兼容模式呈现
 标准模式：排版和js都以浏览器支持的最高标准运行 
 兼容模式：页面以宽松的向后兼容的方式显示， 模拟老浏览器的行为 防止页面无法访问。">
-<meta property="og:updated_time" content="2017-03-20T12:43:16.000Z">
+<meta property="og:updated_time" content="2017-03-21T12:37:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="interview">
 <meta name="twitter:description" content="1.Doctype的作用？标准模式和兼容模式各有什么区别？
@@ -681,6 +681,111 @@ Doctype不存在或者格式不正确会导致文档以兼容模式呈现
 <ul>
 <li>-webkit-overflow-scrolling: touch;</li>
 </ul>
+<p>53.cookie隔离？</p>
+<ul>
+<li>静态资源放在主域名下 那么请求静态资源会带上cookie 浪费流量</li>
+<li>cookie有域限制 因此不能跨域提交请求，所以使用非主要域名的时候 请求头中不会带有cookie</li>
+</ul>
+<p>54.js数据类型</p>
+<ul>
+<li>基本类型 undefined unll string number boolean</li>
+<li>2015 新增symbol 创建后独一无二不可变</li>
+<li>引用类型：堆（对象数组）</li>
+</ul>
+<p>55.js内置对象</p>
+<ul>
+<li>Object 所有对象的父对象</li>
+<li>数据类型封装对象 Object Array Boolean Number String </li>
+<li>其他对象： Function RegExp Math Date Error Anguments</li>
+</ul>
+<p>56.js写法的基本规范？</p>
+<ul>
+<li>不要再一行声明多个变量</li>
+<li>用===/!==比较</li>
+<li>字面量 代替 new Array</li>
+<li>不要使用全局变量</li>
+<li>switch 必须带有 default</li>
+<li>函数输出要一致</li>
+</ul>
+<p>57.js原型链</p>
+<ul>
+<li>当我们访问一个对象的属性方法的时候，如果对象不存在 那么它会顺着原型链一直往上找到 Object.prototype<br>还没有的话返回null</li>
+<li>对象实例没有prototype 只有指针指向构造函数的 prototype</li>
+<li>构造函数的原型改变会影响所有的对象实例</li>
+</ul>
+<p>58.继承</p>
+<ul>
+<li><p>原型链继承</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//新建实例 作为原型对象 效率会低一些</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">Child.prototype = <span class="keyword">new</span> Parent()</div><div class="line">Child.prototype.constructor = Child</div></pre></td></tr></table></figure>
+</li>
+<li><p>原型继承</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//只是移动child.prototype 的指针指向Parent.prototype </span></div><div class="line"><span class="comment">//缺点 修改Children.prototype 会影响 Parent.prototype</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">Child.prototype = Parent.prototype</div><div class="line">Child.prototype.constructor = Child</div></pre></td></tr></table></figure>
+</li>
+<li><p>临时构造函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"><span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">F.prototype = Parent.prototype;</div><div class="line">Child.prototype = <span class="keyword">new</span> F();</div><div class="line">Child.prototype.constructor = Child;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend</span>(<span class="params">Parent, Child</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> F = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">    F.prototype = <span class="keyword">new</span> Parent();</div><div class="line">    Child.prototype = F.prototype;</div><div class="line">    Child.prototype.constructor = Child;</div><div class="line">    Child.uber = Parent.prototype;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>属性拷贝</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">extend2</span>(<span class="params">Parnet, Child</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> p = Parnet.prototype;</div><div class="line">    <span class="keyword">var</span> c = Child.prototype;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> p)&#123;</div><div class="line">        c[i] = p[i]</div><div class="line">    &#125;</div><div class="line">    c.uber = p</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>58.js作用域链？</p>
+<ul>
+<li>局部函数可以查看上层函数的细节 上层函数 无法直接访问局部函数细节</li>
+</ul>
+<p>59.this的理解</p>
+<ul>
+<li>有new的话 this指向new的对象实例</li>
+<li>定时器的话都是window</li>
+<li>事件this指向发生事件的对象</li>
+<li>方法 this 指向调用方法的对象</li>
+<li>其他 window</li>
+<li>箭头函数 this 总是指向定义时所在的对象，而不是运行时所在的对象。</li>
+</ul>
+<p>59.eval?</p>
+<ul>
+<li>把字符串解析成js执行</li>
+</ul>
+<p>60.window和document</p>
+<ul>
+<li>window 浏览器窗口</li>
+<li>document html稳定对象</li>
+</ul>
+<p>61.null 和 undefined</p>
+<ul>
+<li>null 空对象</li>
+<li>undefined 变量没有初始化</li>
+</ul>
+<p>62.阻止冒泡</p>
+<ul>
+<li>ev.stopPropagation()</li>
+<li>event.cancelBubble = true</li>
+</ul>
+<p>63.闭包？</p>
+<ul>
+<li>能读取其他函数的内部变量的函数</li>
+<li>因为只有子函数才能读取 局部变量：所以也可以理解为定义在函数内部的函数</li>
+<li>参数变量不会呗垃圾回收机制回收</li>
+</ul>
+<p>64.use strict</p>
+<ul>
+<li>严格运行模式 </li>
+<li>糟糕特性无法使用： with 不能赋值全局变量 代码块内不能声明函数</li>
+</ul>
+<p>65.判断一个对象属于一个类</p>
+<ul>
+<li>instanceof</li>
+</ul>
+<p>66.new 操作符到底干嘛了？<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;&#125;</div><div class="line">obj.__prototype__ = Base.prototype;</div><div class="line">Base.call(obj)</div></pre></td></tr></table></figure></p>
+<p>67.js延迟加载？</p>
+<ul>
+<li>defer和async <ul>
+<li>defer html结构加载完成后才加载</li>
+<li>async 异步加载加载完成后马上执行</li>
+</ul>
+</li>
+<li>动态创建DOM</li>
+<li>按需加载</li>
+</ul>
 
       
     </div>
@@ -717,8 +822,8 @@ Doctype不存在或者格式不正确会导致文档以兼容模式呈现
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/03/laoshi/" rel="next" title="laoshi">
-                <i class="fa fa-chevron-left"></i> laoshi
+              <a href="/2017/02/27/webpack/" rel="next" title="webpack">
+                <i class="fa fa-chevron-left"></i> webpack
               </a>
             
           </div>
@@ -727,8 +832,8 @@ Doctype不存在或者格式不正确会导致文档以兼容模式呈现
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/20/Array/" rel="prev" title="Array">
-                Array <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/08/interview2/" rel="prev" title="interview2">
+                interview2 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -792,7 +897,7 @@ Doctype不存在或者格式不正确会导致文档以兼容模式呈现
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -810,7 +915,7 @@ Doctype不存在或者格式不正确会导致文档以兼容模式呈现
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

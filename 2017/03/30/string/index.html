@@ -127,7 +127,7 @@ fromCharAt(unicode1, unicode2, …) //跟进字符串编码创建字符串
 indexOf()
 lastIndexOf() 
 url获取参数 split(url.las">
-<meta property="og:updated_time" content="2017-03-30T12:32:55.000Z">
+<meta property="og:updated_time" content="2017-03-30T12:37:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="字符串 string">
 <meta name="twitter:description" content="字符串相关内容查找方法
@@ -460,19 +460,19 @@ url获取参数 split(url.las">
 <li>未找到返回 -1</li>
 </ul>
 </li>
-<li><p>replace</p>
-<ul>
+<li>replace<ul>
 <li>$$ //$</li>
 <li>$&amp; //整个模式的子字符串  就是匹配的内容</li>
 <li>$’ //匹配字符串之前的字符串</li>
 <li>$` //匹配字符串之后的字符串</li>
 <li>$0-9  //匹配第n个捕获组</li>
-<li>function(arguments){}<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'aabbccddee'</span>;</div><div class="line">str.replace(<span class="regexp">/(bb)(cc)/g</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</div><div class="line">    <span class="comment">// 0 : bbcc</span></div><div class="line">    <span class="comment">// 1 : bb</span></div><div class="line">    <span class="comment">// 2 : cc</span></div><div class="line">    <span class="comment">// 3 : 2 </span></div><div class="line">    <span class="comment">// 4 : aabbcxdsee</span></div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-</li>
+<li>function(arguments){}</li>
 </ul>
 </li>
-<li><p>split</p>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'aabbccddee'</span>;</div><div class="line">str.replace(<span class="regexp">/(bb)(cc)/g</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</div><div class="line">    <span class="comment">// 0 : bbcc</span></div><div class="line">    <span class="comment">// 1 : bb</span></div><div class="line">    <span class="comment">// 2 : cc</span></div><div class="line">    <span class="comment">// 3 : 2 </span></div><div class="line">    <span class="comment">// 4 : aabbcxdsee</span></div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <ul>
+<li>split<ul>
 <li>分割符号</li>
 <li>长度</li>
 </ul>

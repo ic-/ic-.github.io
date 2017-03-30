@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="跨域,jsonp,iframe,window.name,window.postMessage,CORS," />
+  <meta name="keywords" content="js,dom," />
 
 
 
@@ -87,43 +87,55 @@
 
 
 
-<meta name="description" content="jsonp
-创建script+callbackName + window.callbackName(data)
-
-document.domain + iframe
-documet.domain 只适合不同子域名的框架之间
-www.example.com/a.html
-example.com/b.html 
+<meta name="description" content="Dom 基本操作获取节点
+document
+getElementById
+getElementsByTagName
+getElementsByName
 
 
-a/b 都加上 document.domain = ‘example.com’ 就可以访">
+节点指针
+parentNode
+childNodes
+previousSibling
+nextSibling
+firstChild
+lastChild">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何解决跨域问题？">
-<meta property="og:url" content="https://ic-.gihub.io/2017/03/24/jsonp/index.html">
+<meta property="og:title" content="Dom 操作">
+<meta property="og:url" content="https://ic-.gihub.io/2017/03/30/dom/index.html">
 <meta property="og:site_name" content="ke_xx">
-<meta property="og:description" content="jsonp
-创建script+callbackName + window.callbackName(data)
-
-document.domain + iframe
-documet.domain 只适合不同子域名的框架之间
-www.example.com/a.html
-example.com/b.html 
+<meta property="og:description" content="Dom 基本操作获取节点
+document
+getElementById
+getElementsByTagName
+getElementsByName
 
 
-a/b 都加上 document.domain = ‘example.com’ 就可以访">
-<meta property="og:updated_time" content="2017-03-30T07:10:50.000Z">
+节点指针
+parentNode
+childNodes
+previousSibling
+nextSibling
+firstChild
+lastChild">
+<meta property="og:updated_time" content="2017-03-30T07:08:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何解决跨域问题？">
-<meta name="twitter:description" content="jsonp
-创建script+callbackName + window.callbackName(data)
-
-document.domain + iframe
-documet.domain 只适合不同子域名的框架之间
-www.example.com/a.html
-example.com/b.html 
+<meta name="twitter:title" content="Dom 操作">
+<meta name="twitter:description" content="Dom 基本操作获取节点
+document
+getElementById
+getElementsByTagName
+getElementsByName
 
 
-a/b 都加上 document.domain = ‘example.com’ 就可以访">
+节点指针
+parentNode
+childNodes
+previousSibling
+nextSibling
+firstChild
+lastChild">
 
 
 
@@ -151,13 +163,13 @@ a/b 都加上 document.domain = ‘example.com’ 就可以访">
 
 
 
-  <link rel="canonical" href="https://ic-.gihub.io/2017/03/24/jsonp/"/>
+  <link rel="canonical" href="https://ic-.gihub.io/2017/03/30/dom/"/>
 
 
 
 
 
-  <title> 如何解决跨域问题？ | ke_xx </title>
+  <title> Dom 操作 | ke_xx </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -286,7 +298,7 @@ a/b 都加上 document.domain = ‘example.com’ 就可以访">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://ic-.gihub.io/2017/03/24/jsonp/">
+  <link itemprop="mainEntityOfPage" href="https://ic-.gihub.io/2017/03/30/dom/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="ke_xx">
@@ -310,7 +322,7 @@ a/b 都加上 document.domain = ‘example.com’ 就可以访">
             
             
               
-                如何解决跨域问题？
+                Dom 操作
               
             
           </h1>
@@ -325,8 +337,8 @@ a/b 都加上 document.domain = ‘example.com’ 就可以访">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-24T10:41:55+08:00">
-                2017-03-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-30T14:28:46+08:00">
+                2017-03-30
               </time>
             
 
@@ -383,46 +395,41 @@ a/b 都加上 document.domain = ‘example.com’ 就可以访">
       
 
       
-        <h4 id="jsonp"><a href="#jsonp" class="headerlink" title="jsonp"></a>jsonp</h4><ul>
-<li>创建script+callbackName + window.callbackName(data)</li>
-</ul>
-<h4 id="document-domain-iframe"><a href="#document-domain-iframe" class="headerlink" title="document.domain + iframe"></a>document.domain + iframe</h4><ul>
-<li>documet.domain 只适合不同子域名的框架之间<ul>
-<li>www.example.com/a.html</li>
-<li>example.com/b.html </li>
+        <h3 id="Dom-基本操作"><a href="#Dom-基本操作" class="headerlink" title="Dom 基本操作"></a>Dom 基本操作</h3><h4 id="获取节点"><a href="#获取节点" class="headerlink" title="获取节点"></a>获取节点</h4><ul>
+<li>document<ul>
+<li>getElementById</li>
+<li>getElementsByTagName</li>
+<li>getElementsByName</li>
 </ul>
 </li>
-<li>a/b 都加上 document.domain = ‘example.com’ 就可以访问了</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//a.html </span></div><div class="line"><span class="comment">// &lt;iframe src="http://example.com/b.html "&gt;&lt;/iframe&gt;</span></div><div class="line">doucument.domain  = <span class="string">'example.com'</span></div><div class="line"><span class="keyword">var</span> iframe = <span class="built_in">document</span>.getElementByTagName(<span class="string">'iframe'</span>)[<span class="number">0</span>];</div><div class="line"><span class="keyword">var</span> win = iframe.contentWindow;</div><div class="line"><span class="keyword">var</span> <span class="built_in">document</span> = wind.document; <span class="comment">//可以访问</span></div><div class="line"><span class="keyword">var</span> name = wind.name; <span class="comment">//可以访问不到</span></div><div class="line"></div><div class="line"><span class="comment">//b.html</span></div><div class="line">doucument.domain  = <span class="string">'example.com'</span></div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h4 id="window-name-iframe"><a href="#window-name-iframe" class="headerlink" title="window.name + iframe"></a>window.name + iframe</h4><ul>
-<li>window.name 特殊属性 </li>
-<li>一个窗口(window)的生命周期内 窗口内载入的所有页面都共享window.name </li>
-<li>每个页面都能读写 window.name</li>
-<li>数据必须是字符串<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// a.html</span></div><div class="line"><span class="comment">// &lt;iframe src="xxx/b.html"&gt;&lt;/iframe&gt;</span></div><div class="line">alert(<span class="built_in">window</span>.name) <span class="comment">//我是页面b设置的数据 给a页面用</span></div><div class="line"></div><div class="line"><span class="comment">//b.html</span></div><div class="line"><span class="built_in">window</span>.name = <span class="string">'我是页面b设置的数据 给a页面用'</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="html5-window-postMessage-iframe"><a href="#html5-window-postMessage-iframe" class="headerlink" title="html5 window.postMessage + iframe"></a>html5 window.postMessage + iframe</h4><ul>
-<li>window.postMessage(message, targetOrigin)<ul>
-<li>targetOrigin 页面域 或者不限定<ul>
-<li>限定: <a href="http://www.jd.com" target="_blank" rel="external">http://www.jd.com</a></li>
-<li>不限定: *</li>
+<li>节点指针<ul>
+<li>parentNode</li>
+<li>childNodes</li>
+<li>previousSibling</li>
+<li>nextSibling</li>
+<li>firstChild</li>
+<li>lastChild<a id="more"></a>
+<h4 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h4><h5 id="创建节点"><a href="#创建节点" class="headerlink" title="创建节点"></a>创建节点</h5></li>
 </ul>
 </li>
+<li>document<ul>
+<li>createElement</li>
+<li>createAttribute</li>
+<li>createTextNode<h5 id="插入节点"><a href="#插入节点" class="headerlink" title="插入节点"></a>插入节点</h5></li>
 </ul>
 </li>
-<li>可以向其他window()发送信息</li>
-<li>window.onmessage 监听别人发送的信息</li>
-<li>没有同源限制<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// a.html</span></div><div class="line"><span class="comment">// &lt;iframe src="xxx/b.html"&gt;&lt;/iframe&gt;</span></div><div class="line"><span class="built_in">window</span>.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(e.data); <span class="comment">//获取a页面的window 给a页面 发送数据</span></div><div class="line">&#125;</div><div class="line"><span class="comment">// b.html </span></div><div class="line"><span class="keyword">var</span> win = <span class="built_in">window</span>.parent;</div><div class="line">win.postMessage(<span class="string">'获取a页面的window 给a页面 发送数据'</span>, *)</div></pre></td></tr></table></figure>
-</li>
+<li>appendChild</li>
+<li>insertBefore<h5 id="替换节点"><a href="#替换节点" class="headerlink" title="替换节点"></a>替换节点</h5></li>
+<li>replaceChild<h5 id="复制节点"><a href="#复制节点" class="headerlink" title="复制节点"></a>复制节点</h5></li>
+<li>cloneChild(true/false)<ul>
+<li>true 有子节点</li>
+<li>false 无子节点<h5 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h5></li>
 </ul>
-<h4 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h4><ul>
-<li>服务端设置 允许域和允许方法</li>
-<li>默认持GET/POST方式</li>
-<li>设置支持的方法 </li>
-<li>ie8 不支持XDR特别的😄 但是ie11又不支持了<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">res.setHeader(<span class="string">'Access-Control-Allow-Origin'</span>, <span class="string">'*'</span>)</div><div class="line">res.setHeader(<span class="string">'Access-Control-Allow-Methods'</span>, <span class="string">'PUT, GET, POST, DELETE, HEAD, PATCH'</span>)</div></pre></td></tr></table></figure>
 </li>
+<li>removeChild<h4 id="属性操作"><a href="#属性操作" class="headerlink" title="属性操作"></a>属性操作</h4></li>
+<li>getAttribute</li>
+<li>setAttribute</li>
+<li>removeAttribute</li>
 </ul>
 
       
@@ -447,17 +454,9 @@ a/b 都加上 document.domain = ‘example.com’ 就可以访">
       
         <div class="post-tags">
           
-            <a href="/tags/跨域/" rel="tag"># 跨域</a>
+            <a href="/tags/js/" rel="tag"># js</a>
           
-            <a href="/tags/jsonp/" rel="tag"># jsonp</a>
-          
-            <a href="/tags/iframe/" rel="tag"># iframe</a>
-          
-            <a href="/tags/window-name/" rel="tag"># window.name</a>
-          
-            <a href="/tags/window-postMessage/" rel="tag"># window.postMessage</a>
-          
-            <a href="/tags/CORS/" rel="tag"># CORS</a>
+            <a href="/tags/dom/" rel="tag"># dom</a>
           
         </div>
       
@@ -470,8 +469,8 @@ a/b 都加上 document.domain = ‘example.com’ 就可以访">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/20/Array/" rel="next" title="Array">
-                <i class="fa fa-chevron-left"></i> Array
+              <a href="/2017/03/29/arrSort/" rel="next" title="排序去重">
+                <i class="fa fa-chevron-left"></i> 排序去重
               </a>
             
           </div>
@@ -480,8 +479,8 @@ a/b 都加上 document.domain = ‘example.com’ 就可以访">
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/27/test/" rel="prev" title="js 单元测试">
-                js 单元测试 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/30/function/" rel="prev" title="函数基础">
+                函数基础 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -607,7 +606,7 @@ a/b 都加上 document.domain = ‘example.com’ 就可以访">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#jsonp"><span class="nav-number">1.</span> <span class="nav-text">jsonp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#document-domain-iframe"><span class="nav-number">2.</span> <span class="nav-text">document.domain + iframe</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#window-name-iframe"><span class="nav-number">3.</span> <span class="nav-text">window.name + iframe</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#html5-window-postMessage-iframe"><span class="nav-number">4.</span> <span class="nav-text">html5 window.postMessage + iframe</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CORS"><span class="nav-number">5.</span> <span class="nav-text">CORS</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Dom-基本操作"><span class="nav-number">1.</span> <span class="nav-text">Dom 基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#获取节点"><span class="nav-number">1.1.</span> <span class="nav-text">获取节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#节点操作"><span class="nav-number">1.2.</span> <span class="nav-text">节点操作</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#创建节点"><span class="nav-number">1.2.1.</span> <span class="nav-text">创建节点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#插入节点"><span class="nav-number">1.2.2.</span> <span class="nav-text">插入节点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#替换节点"><span class="nav-number">1.2.3.</span> <span class="nav-text">替换节点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#复制节点"><span class="nav-number">1.2.4.</span> <span class="nav-text">复制节点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#删除节点"><span class="nav-number">1.2.5.</span> <span class="nav-text">删除节点</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性操作"><span class="nav-number">1.3.</span> <span class="nav-text">属性操作</span></a></li></ol></li></ol></div>
             
 
           </div>

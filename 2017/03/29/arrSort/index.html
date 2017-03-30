@@ -93,7 +93,7 @@
 <meta property="og:url" content="https://ic-.gihub.io/2017/03/29/arrSort/index.html">
 <meta property="og:site_name" content="ke_xx">
 <meta property="og:description" content="数组去重和排序去重12345678910111213Array.prototype.unique=function() &amp;#123;  var arr = [];  this.sort();    for(var i = 0, len = this.length; i &amp;lt; len; i++)&amp;#123;      if(this[i] != this[i+1])&amp;#123;">
-<meta property="og:updated_time" content="2017-03-30T03:04:20.000Z">
+<meta property="og:updated_time" content="2017-03-30T07:08:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="排序去重">
 <meta name="twitter:description" content="数组去重和排序去重12345678910111213Array.prototype.unique=function() &amp;#123;  var arr = [];  this.sort();    for(var i = 0, len = this.length; i &amp;lt; len; i++)&amp;#123;      if(this[i] != this[i+1])&amp;#123;">
@@ -309,6 +309,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -335,6 +357,7 @@
 
       
         <h3 id="数组去重和排序"><a href="#数组去重和排序" class="headerlink" title="数组去重和排序"></a>数组去重和排序</h3><h4 id="去重"><a href="#去重" class="headerlink" title="去重"></a>去重</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Array</span>.prototype.unique=<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> arr = [];</div><div class="line">  <span class="keyword">this</span>.sort();</div><div class="line">  </div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, len = <span class="keyword">this</span>.length; i &lt; len; i++)&#123;</div><div class="line">      <span class="keyword">if</span>(<span class="keyword">this</span>[i] != <span class="keyword">this</span>[i+<span class="number">1</span>])&#123;</div><div class="line">          arr.push(<span class="keyword">this</span>[i])</div><div class="line">      &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> arr;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">2</span>];</div><div class="line"><span class="built_in">console</span>.log(arr.unique()) <span class="comment">//[1, 2, 3, 4, 5]</span></div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><h5 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">arr.sort(<span class="function">(<span class="params">x1, x2</span>) =&gt;</span> &#123;</div><div class="line">    <span class="comment">// return -1 // &lt;0 [x1, x2]</span></div><div class="line">    <span class="comment">// return 1 // &gt;0 [x2, x1]</span></div><div class="line">    <span class="comment">// return 0 // =0 [x1, x2]</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <h5 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h5><ul>
 <li>每次从第一个开始冒泡</li>
@@ -413,6 +436,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/03/30/dom/" rel="prev" title="Dom 操作">
+                Dom 操作 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -475,7 +502,7 @@
                alt="ke_xx" />
           <p class="site-author-name" itemprop="name">ke_xx</p>
            
-              <p class="site-description motion-element" itemprop="description">Blog Record Other</p>
+              <p class="site-description motion-element" itemprop="description">Blog</p>
           
         </div>
         <nav class="site-state motion-element">
@@ -483,7 +510,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -492,7 +519,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -501,7 +528,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

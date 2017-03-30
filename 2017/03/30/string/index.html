@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="跨域,jsonp,iframe,window.name,window.postMessage,CORS," />
+  <meta name="keywords" content="js,string," />
 
 
 
@@ -87,43 +87,61 @@
 
 
 
-<meta name="description" content="jsonp
-创建script+callbackName + window.callbackName(data)
-
-document.domain + iframe
-documet.domain 只适合不同子域名的框架之间
-www.example.com/a.html
-example.com/b.html 
+<meta name="description" content="字符串相关内容查找方法
+charAt(n) 
+n &amp;gt; len  //空字符串
 
 
-a/b 都加上 document.domain = ‘example.com’ 就可以访">
+charCodeAt(n)  //unicode编码
+n &amp;gt; len  //NaN
+
+
+fromCharAt(unicode1, unicode2, …) //跟进字符串编码创建字符串
+返回字符串位置方法
+
+
+indexOf()
+lastIndexOf() 
+url获取参数 split(url.lastI">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何解决跨域问题？">
-<meta property="og:url" content="https://ic-.gihub.io/2017/03/24/jsonp/index.html">
+<meta property="og:title" content="字符串 string">
+<meta property="og:url" content="https://ic-.gihub.io/2017/03/30/string/index.html">
 <meta property="og:site_name" content="ke_xx">
-<meta property="og:description" content="jsonp
-创建script+callbackName + window.callbackName(data)
-
-document.domain + iframe
-documet.domain 只适合不同子域名的框架之间
-www.example.com/a.html
-example.com/b.html 
+<meta property="og:description" content="字符串相关内容查找方法
+charAt(n) 
+n &amp;gt; len  //空字符串
 
 
-a/b 都加上 document.domain = ‘example.com’ 就可以访">
-<meta property="og:updated_time" content="2017-03-30T07:10:50.000Z">
+charCodeAt(n)  //unicode编码
+n &amp;gt; len  //NaN
+
+
+fromCharAt(unicode1, unicode2, …) //跟进字符串编码创建字符串
+返回字符串位置方法
+
+
+indexOf()
+lastIndexOf() 
+url获取参数 split(url.lastI">
+<meta property="og:updated_time" content="2017-03-30T12:11:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="如何解决跨域问题？">
-<meta name="twitter:description" content="jsonp
-创建script+callbackName + window.callbackName(data)
-
-document.domain + iframe
-documet.domain 只适合不同子域名的框架之间
-www.example.com/a.html
-example.com/b.html 
+<meta name="twitter:title" content="字符串 string">
+<meta name="twitter:description" content="字符串相关内容查找方法
+charAt(n) 
+n &amp;gt; len  //空字符串
 
 
-a/b 都加上 document.domain = ‘example.com’ 就可以访">
+charCodeAt(n)  //unicode编码
+n &amp;gt; len  //NaN
+
+
+fromCharAt(unicode1, unicode2, …) //跟进字符串编码创建字符串
+返回字符串位置方法
+
+
+indexOf()
+lastIndexOf() 
+url获取参数 split(url.lastI">
 
 
 
@@ -151,13 +169,13 @@ a/b 都加上 document.domain = ‘example.com’ 就可以访">
 
 
 
-  <link rel="canonical" href="https://ic-.gihub.io/2017/03/24/jsonp/"/>
+  <link rel="canonical" href="https://ic-.gihub.io/2017/03/30/string/"/>
 
 
 
 
 
-  <title> 如何解决跨域问题？ | ke_xx </title>
+  <title> 字符串 string | ke_xx </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -286,7 +304,7 @@ a/b 都加上 document.domain = ‘example.com’ 就可以访">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://ic-.gihub.io/2017/03/24/jsonp/">
+  <link itemprop="mainEntityOfPage" href="https://ic-.gihub.io/2017/03/30/string/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="ke_xx">
@@ -310,7 +328,7 @@ a/b 都加上 document.domain = ‘example.com’ 就可以访">
             
             
               
-                如何解决跨域问题？
+                字符串 string
               
             
           </h1>
@@ -325,8 +343,8 @@ a/b 都加上 document.domain = ‘example.com’ 就可以访">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-24T10:41:55+08:00">
-                2017-03-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-30T16:36:17+08:00">
+                2017-03-30
               </time>
             
 
@@ -383,46 +401,101 @@ a/b 都加上 document.domain = ‘example.com’ 就可以访">
       
 
       
-        <h4 id="jsonp"><a href="#jsonp" class="headerlink" title="jsonp"></a>jsonp</h4><ul>
-<li>创建script+callbackName + window.callbackName(data)</li>
-</ul>
-<h4 id="document-domain-iframe"><a href="#document-domain-iframe" class="headerlink" title="document.domain + iframe"></a>document.domain + iframe</h4><ul>
-<li>documet.domain 只适合不同子域名的框架之间<ul>
-<li>www.example.com/a.html</li>
-<li>example.com/b.html </li>
+        <h3 id="字符串相关内容"><a href="#字符串相关内容" class="headerlink" title="字符串相关内容"></a>字符串相关内容</h3><h4 id="查找方法"><a href="#查找方法" class="headerlink" title="查找方法"></a>查找方法</h4><ul>
+<li>charAt(n) <ul>
+<li>n &gt; len  //空字符串</li>
 </ul>
 </li>
-<li>a/b 都加上 document.domain = ‘example.com’ 就可以访问了</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//a.html </span></div><div class="line"><span class="comment">// &lt;iframe src="http://example.com/b.html "&gt;&lt;/iframe&gt;</span></div><div class="line">doucument.domain  = <span class="string">'example.com'</span></div><div class="line"><span class="keyword">var</span> iframe = <span class="built_in">document</span>.getElementByTagName(<span class="string">'iframe'</span>)[<span class="number">0</span>];</div><div class="line"><span class="keyword">var</span> win = iframe.contentWindow;</div><div class="line"><span class="keyword">var</span> <span class="built_in">document</span> = wind.document; <span class="comment">//可以访问</span></div><div class="line"><span class="keyword">var</span> name = wind.name; <span class="comment">//可以访问不到</span></div><div class="line"></div><div class="line"><span class="comment">//b.html</span></div><div class="line">doucument.domain  = <span class="string">'example.com'</span></div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h4 id="window-name-iframe"><a href="#window-name-iframe" class="headerlink" title="window.name + iframe"></a>window.name + iframe</h4><ul>
-<li>window.name 特殊属性 </li>
-<li>一个窗口(window)的生命周期内 窗口内载入的所有页面都共享window.name </li>
-<li>每个页面都能读写 window.name</li>
-<li>数据必须是字符串<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// a.html</span></div><div class="line"><span class="comment">// &lt;iframe src="xxx/b.html"&gt;&lt;/iframe&gt;</span></div><div class="line">alert(<span class="built_in">window</span>.name) <span class="comment">//我是页面b设置的数据 给a页面用</span></div><div class="line"></div><div class="line"><span class="comment">//b.html</span></div><div class="line"><span class="built_in">window</span>.name = <span class="string">'我是页面b设置的数据 给a页面用'</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="html5-window-postMessage-iframe"><a href="#html5-window-postMessage-iframe" class="headerlink" title="html5 window.postMessage + iframe"></a>html5 window.postMessage + iframe</h4><ul>
-<li>window.postMessage(message, targetOrigin)<ul>
-<li>targetOrigin 页面域 或者不限定<ul>
-<li>限定: <a href="http://www.jd.com" target="_blank" rel="external">http://www.jd.com</a></li>
-<li>不限定: *</li>
+<li>charCodeAt(n)  //unicode编码<ul>
+<li>n &gt; len  //NaN</li>
 </ul>
 </li>
+<li>fromCharAt(unicode1, unicode2, …) //跟进字符串编码创建字符串<ul>
+<li>返回字符串<h4 id="位置方法"><a href="#位置方法" class="headerlink" title="位置方法"></a>位置方法</h4></li>
 </ul>
 </li>
-<li>可以向其他window()发送信息</li>
-<li>window.onmessage 监听别人发送的信息</li>
-<li>没有同源限制<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// a.html</span></div><div class="line"><span class="comment">// &lt;iframe src="xxx/b.html"&gt;&lt;/iframe&gt;</span></div><div class="line"><span class="built_in">window</span>.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(e.data); <span class="comment">//获取a页面的window 给a页面 发送数据</span></div><div class="line">&#125;</div><div class="line"><span class="comment">// b.html </span></div><div class="line"><span class="keyword">var</span> win = <span class="built_in">window</span>.parent;</div><div class="line">win.postMessage(<span class="string">'获取a页面的window 给a页面 发送数据'</span>, *)</div></pre></td></tr></table></figure>
+<li>indexOf()</li>
+<li>lastIndexOf() <ul>
+<li>url获取参数 split(url.lastIndexOf(‘?’))</li>
+</ul>
+</li>
+<li>找到返回位置</li>
+<li>未找到返回 -1<a id="more"></a>
+<h4 id="匹配方法"><a href="#匹配方法" class="headerlink" title="匹配方法"></a>匹配方法</h4></li>
+<li>match<ul>
+<li>一个或者多个匹配</li>
+<li>返回匹配数组</li>
+<li>有g 多个匹配<ul>
+<li>所有匹配的子串</li>
+<li>没有派生属性</li>
+<li>没有子表达式匹配</li>
+</ul>
+</li>
+<li>无g 单个匹配<ul>
+<li>匹配文本</li>
+<li>其他子表达式匹配</li>
+<li>属性<ul>
+<li>input 调用改方法的字符串对象</li>
+<li>index 匹配文本的起始位置</li>
+<li>lastIndex 匹配文本的结束位置</li>
+</ul>
 </li>
 </ul>
-<h4 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h4><ul>
-<li>服务端设置 允许域和允许方法</li>
-<li>默认持GET/POST方式</li>
-<li>设置支持的方法 </li>
-<li>ie8 不支持XDR特别的😄 但是ie11又不支持了<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">res.setHeader(<span class="string">'Access-Control-Allow-Origin'</span>, <span class="string">'*'</span>)</div><div class="line">res.setHeader(<span class="string">'Access-Control-Allow-Methods'</span>, <span class="string">'PUT, GET, POST, DELETE, HEAD, PATCH'</span>)</div></pre></td></tr></table></figure>
 </li>
+<li>没找到返回null</li>
+</ul>
+</li>
+<li>search<ul>
+<li>找到返回位置</li>
+<li>未找到返回 -1</li>
+</ul>
+</li>
+<li><p>replace</p>
+<ul>
+<li>$$ //$</li>
+<li>$&amp; //整个模式的子字符串  就是匹配的内容</li>
+<li>$’ //匹配字符串之前的字符串</li>
+<li>$` //匹配字符串之后的字符串</li>
+<li>$0-9  //匹配第n个捕获组</li>
+<li>function(arguments){}<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'aabbccddee'</span>;</div><div class="line">str.replace(<span class="regexp">/(bb)(cc)/g</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</div><div class="line">    <span class="comment">// 0 : bbcc</span></div><div class="line">    <span class="comment">// 1 : bb</span></div><div class="line">    <span class="comment">// 2 : cc</span></div><div class="line">    <span class="comment">// 3 : 2 </span></div><div class="line">    <span class="comment">// 4 : aabbcxdsee</span></div><div class="line">    <span class="comment">//</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>split</p>
+<ul>
+<li>分割符号</li>
+<li>长度</li>
+</ul>
+</li>
+</ul>
+<h4 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h4><ul>
+<li>concat string.concat(values, ….)</li>
+<li>slice(start, end)</li>
+<li>substring(start, end)</li>
+<li>substr(start, end)</li>
+<li>trim()</li>
+<li>trimLeft()</li>
+<li>trimRight</li>
+</ul>
+<h4 id="编码方法"><a href="#编码方法" class="headerlink" title="编码方法"></a>编码方法</h4><ul>
+<li>escape()</li>
+<li>unescape()</li>
+<li>encodeURI()</li>
+<li>decodeURI()<ul>
+<li>URL标识不会被编码</li>
+<li>如： htt:// =&gt; http://</li>
+</ul>
+</li>
+<li>encodeURIComponent()</li>
+<li>decodeURIComponent()<ul>
+<li>对整个URI都编码了</li>
+<li>如： htt:// =&gt; http%3A//</li>
+</ul>
+</li>
+</ul>
+<h4 id="转换方法"><a href="#转换方法" class="headerlink" title="转换方法"></a>转换方法</h4><ul>
+<li>toLowerCase()</li>
+<li>toUpperCase()</li>
 </ul>
 
       
@@ -447,17 +520,9 @@ a/b 都加上 document.domain = ‘example.com’ 就可以访">
       
         <div class="post-tags">
           
-            <a href="/tags/跨域/" rel="tag"># 跨域</a>
+            <a href="/tags/js/" rel="tag"># js</a>
           
-            <a href="/tags/jsonp/" rel="tag"># jsonp</a>
-          
-            <a href="/tags/iframe/" rel="tag"># iframe</a>
-          
-            <a href="/tags/window-name/" rel="tag"># window.name</a>
-          
-            <a href="/tags/window-postMessage/" rel="tag"># window.postMessage</a>
-          
-            <a href="/tags/CORS/" rel="tag"># CORS</a>
+            <a href="/tags/string/" rel="tag"># string</a>
           
         </div>
       
@@ -470,8 +535,8 @@ a/b 都加上 document.domain = ‘example.com’ 就可以访">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/20/Array/" rel="next" title="Array">
-                <i class="fa fa-chevron-left"></i> Array
+              <a href="/2017/03/30/function/" rel="next" title="函数基础">
+                <i class="fa fa-chevron-left"></i> 函数基础
               </a>
             
           </div>
@@ -479,10 +544,6 @@ a/b 都加上 document.domain = ‘example.com’ 就可以访">
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/27/test/" rel="prev" title="js 单元测试">
-                js 单元测试 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -607,7 +668,7 @@ a/b 都加上 document.domain = ‘example.com’ 就可以访">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#jsonp"><span class="nav-number">1.</span> <span class="nav-text">jsonp</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#document-domain-iframe"><span class="nav-number">2.</span> <span class="nav-text">document.domain + iframe</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#window-name-iframe"><span class="nav-number">3.</span> <span class="nav-text">window.name + iframe</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#html5-window-postMessage-iframe"><span class="nav-number">4.</span> <span class="nav-text">html5 window.postMessage + iframe</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CORS"><span class="nav-number">5.</span> <span class="nav-text">CORS</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串相关内容"><span class="nav-number">1.</span> <span class="nav-text">字符串相关内容</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查找方法"><span class="nav-number">1.1.</span> <span class="nav-text">查找方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#位置方法"><span class="nav-number">1.2.</span> <span class="nav-text">位置方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#匹配方法"><span class="nav-number">1.3.</span> <span class="nav-text">匹配方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#操作方法"><span class="nav-number">1.4.</span> <span class="nav-text">操作方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编码方法"><span class="nav-number">1.5.</span> <span class="nav-text">编码方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#转换方法"><span class="nav-number">1.6.</span> <span class="nav-text">转换方法</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -103,7 +103,7 @@
 链接中 
 事件中
 递归">
-<meta property="og:updated_time" content="2017-04-05T15:55:42.000Z">
+<meta property="og:updated_time" content="2017-04-05T15:57:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="函数基础">
 <meta name="twitter:description" content="函数基础知识函数定义123function fn()&amp;#123;&amp;#125;var fn = function()&amp;#123;&amp;#125;var fn = new Function(arg1, arg2, &quot;console.log(arg1,arg2)&quot; )
@@ -377,9 +377,9 @@
 <li>链接中 <a href="javascript:fn()" target="_blank" rel="external"></a></li>
 <li>事件中</li>
 <li>递归<a id="more"></a>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.onLoad = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    fn()</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">aa</span>(<span class="params">n</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span>(n &lt; <span class="number">10</span>)&#123;</div><div class="line">      n++;</div><div class="line">      aa(n)</div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">      <span class="keyword">return</span> n</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.onLoad = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    fn()</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">aa</span>(<span class="params">n</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span>(n &lt; <span class="number">10</span>)&#123;</div><div class="line">      n++;</div><div class="line">      aa(n)</div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">      <span class="keyword">return</span> n</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ul>
 <li>fn.apply(obj, [args])</li>
 <li>fn.call(obj, arg1, arg2, …)</li>
